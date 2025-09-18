@@ -504,7 +504,11 @@
             ClientSize = new Size(1430, 738);
             Controls.Add(cuiPanel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
             Name = "UserCreateForm";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterParent;
             cuiPanel1.ResumeLayout(false);
             cuiPanel2.ResumeLayout(false);
             ResumeLayout(false);

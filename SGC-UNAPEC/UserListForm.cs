@@ -34,21 +34,24 @@ namespace SGC_UNAPEC
         public void CargarUsuarios()
         {
             string query = @"
-            SELECT 
-                id AS 'ID', 
-                nombre AS 'Nombre', 
-                cedula AS 'Cédula', 
-                tipo_usuario AS 'Rol',
-                limite_credito AS 'Límite de Crédito',
-                clave AS 'Contraseña',
-                CASE 
-                    WHEN estado = 1 THEN 'Activo'
-                    WHEN estado = 0 THEN 'Inactivo'
-                    ELSE 'Desconocido'
-                END AS 'Estado'
-                fecha_registro AS 'Fecha de Registro',
-                fecha_modificacion AS 'Fecha de Modificación'
-            FROM usuarios";
+    SELECT 
+        u.id AS 'ID', 
+        u.nombre AS 'Nombre', 
+        u.cedula AS 'Cédula', 
+        tu.tipo_usuario AS 'Rol',
+        u.limite_credito AS 'Límite de Crédito',
+        CASE 
+            WHEN u.estado = 1 THEN 'Activo'
+            WHEN u.estado = 0 THEN 'Inactivo'
+            ELSE 'Desconocido'
+        END AS 'Estado',
+        u.fecha_registro AS 'Fecha de Registro',
+        CASE
+            WHEN u.fecha_modificacion IS NULL THEN 'Nunca modificado'
+            ELSE CONVERT(varchar, u.fecha_modificacion, 103)
+        END AS 'Fecha de Modificación'
+    FROM usuarios u
+    LEFT JOIN tipo_usuarios tu ON u.tipo_usuario_id = tu.id";
 
             using (SqlCommand command = new SqlCommand(query, DBConnection.con))
             {
@@ -62,17 +65,26 @@ namespace SGC_UNAPEC
                     userListDgv.Columns["Cédula"].DisplayIndex = 1;
                     userListDgv.Columns["Rol"].DisplayIndex = 2;
                     userListDgv.Columns["Límite de Crédito"].DisplayIndex = 3;
-                    userListDgv.Columns["Contraseña"].DisplayIndex = 4;
-                    userListDgv.Columns["Estado"].DisplayIndex = 5;
-                    userListDgv.Columns["Fecha de Registro"].DisplayIndex = 6;
-                    userListDgv.Columns["Fecha de Modificación"].DisplayIndex = 7;
-                    userListDgv.Columns["Editar"].DisplayIndex = 3;
-                    userListDgv.Columns["Eliminar"].DisplayIndex = 4;
+                    userListDgv.Columns["Estado"].DisplayIndex = 4;
+                    userListDgv.Columns["Fecha de Registro"].DisplayIndex = 5;
+                    userListDgv.Columns["Fecha de Modificación"].DisplayIndex = 6;
+                    userListDgv.Columns["Editar"].DisplayIndex = 7;
+                    userListDgv.Columns["Eliminar"].DisplayIndex = 8;
                 }
             }
         }
 
         private void crearUserListFormBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refrescarUserListFormBtn_Click(object sender, EventArgs e)
+        {
+            CargarUsuarios();
+        }
+
+        private void crearUserListFormBtn_Click_1(object sender, EventArgs e)
         {
             using (UserCreateForm createForm = new UserCreateForm(this))
             {
@@ -83,12 +95,7 @@ namespace SGC_UNAPEC
             }
         }
 
-        private void refrescarUserListFormBtn_Click(object sender, EventArgs e)
-        {
-            CargarUsuarios();
-        }
-
-        private void userListDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void userListDgv_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (userListDgv.Columns[e.ColumnIndex].Name == "Editar")
             {
@@ -102,13 +109,12 @@ namespace SGC_UNAPEC
                     string nombre = userListDgv.Rows[rowIndex].Cells["Nombre"].Value.ToString();
                     string cedula = userListDgv.Rows[rowIndex].Cells["Cédula"].Value.ToString();
                     string rol = userListDgv.Rows[rowIndex].Cells["Rol"].Value.ToString();
-                    string limiteCredito = userListDgv.Rows[rowIndex].Cells["Límite de Crédito"].Value.ToString();
-                    string clave = userListDgv.Rows[rowIndex].Cells["Contraseña"].Value.ToString();
+                    int limiteCredito = Convert.ToInt32(userListDgv.Rows[rowIndex].Cells["Límite de Crédito"].Value);
                     string estado = userListDgv.Rows[rowIndex].Cells["Estado"].Value.ToString();
                     bool estadoBoolean = estado == "Activo";
 
                     // Abrir formulario de edición con los datos
-                    using (UserEditForm editForm = new UserEditForm(id, nombre, cedula, rol, limiteCredito, clave, estadoBoolean, this))
+                    using (UserEditForm editForm = new UserEditForm(id, nombre, cedula, rol, limiteCredito, estadoBoolean, this))
                     {
                         if (editForm.ShowDialog() == DialogResult.OK)
                         {

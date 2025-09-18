@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace SGC_UNAPEC
 {
@@ -29,7 +31,7 @@ namespace SGC_UNAPEC
         {
             nombreUserCreateFormTxt.Content = "";
             cedulaUserCreateFormTxt.Content = "";
-            rolUserCreateFormCombo.SelectedItem = null;
+            rolUserCreateFormCombo.ResetText();
             limiteCreditoUserCreateFormTxt.Content = "";
             contraseñaUserCreateFormTxt.Content = "";
             confirmarContraseñaUserCreateFormTxt.Content = "";
@@ -58,6 +60,16 @@ namespace SGC_UNAPEC
             InsertarUsuario();
         }
 
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
+
         private void InsertarUsuario()
         {
             try
@@ -67,6 +79,10 @@ namespace SGC_UNAPEC
                     MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                // Hashear la contraseña antes de insertarla
+                string hashedPassword = HashPassword(contraseñaUserCreateFormTxt.Content);
+
                 string query = @"
                 INSERT INTO usuarios (nombre, cedula, tipo_usuario, limite_credito, clave, estado, fecha_registro, fecha_modificacion)
                 VALUES (@nombre, @cedula, @tipo_usuario, @limite_credito, @clave, @estado, GETDATE(), GETDATE())";
@@ -76,7 +92,7 @@ namespace SGC_UNAPEC
                     command.Parameters.AddWithValue("@cedula", cedulaUserCreateFormTxt.Content);
                     command.Parameters.AddWithValue("@tipo_usuario", rolUserCreateFormCombo.SelectedItem.ToString());
                     command.Parameters.AddWithValue("@limite_credito", decimal.Parse(limiteCreditoUserCreateFormTxt.Content));
-                    command.Parameters.AddWithValue("@clave", contraseñaUserCreateFormTxt.Content);
+                    command.Parameters.AddWithValue("@clave", hashedPassword); // Usar la contraseña hasheada
                     command.Parameters.AddWithValue("@estado", estadoUserCreateFormCheck.Checked ? 1 : 0);
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)

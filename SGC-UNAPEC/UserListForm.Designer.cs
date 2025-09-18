@@ -141,6 +141,7 @@
             userListDgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             userListDgv.Size = new Size(1539, 502);
             userListDgv.TabIndex = 1;
+            userListDgv.CellClick += userListDgv_CellClick_1;
             // 
             // Editar
             // 
@@ -254,6 +255,7 @@
             crearUserListFormBtn.Tag = "Tablero";
             crearUserListFormBtn.TextAlignment = StringAlignment.Center;
             crearUserListFormBtn.TextOffset = new Point(0, 0);
+            crearUserListFormBtn.Click += crearUserListFormBtn_Click_1;
             // 
             // UserListForm
             // 
