@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RolListForm));
             panel1 = new Panel();
             cuiSeparator1 = new CuoreUI.Controls.cuiSeparator();
             cuiLabel1 = new CuoreUI.Controls.cuiLabel();
             panel2 = new Panel();
             rolListDgv = new DataGridView();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            cuiButton1 = new CuoreUI.Controls.cuiButton();
-            tableroBtn = new CuoreUI.Controls.cuiButton();
             Editar = new DataGridViewImageColumn();
             Eliminar = new DataGridViewImageColumn();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            refrescarRolListFormBtn = new CuoreUI.Controls.cuiButton();
+            crearRolListFormBtn = new CuoreUI.Controls.cuiButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)rolListDgv).BeginInit();
@@ -103,32 +103,32 @@
             rolListDgv.AllowUserToAddRows = false;
             rolListDgv.AllowUserToResizeColumns = false;
             rolListDgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(248, 250, 252);
-            rolListDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(248, 250, 252);
+            rolListDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             rolListDgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             rolListDgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             rolListDgv.BackgroundColor = Color.FromArgb(248, 250, 252);
             rolListDgv.BorderStyle = BorderStyle.None;
             rolListDgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            rolListDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            rolListDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             rolListDgv.ColumnHeadersHeight = 50;
             rolListDgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             rolListDgv.Columns.AddRange(new DataGridViewColumn[] { Editar, Eliminar });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle3.Padding = new Padding(10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(219, 234, 254);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            rolListDgv.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle6.Padding = new Padding(10);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(219, 234, 254);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            rolListDgv.DefaultCellStyle = dataGridViewCellStyle6;
             rolListDgv.Dock = DockStyle.Fill;
             rolListDgv.EnableHeadersVisualStyles = false;
             rolListDgv.GridColor = Color.FromArgb(226, 232, 240);
@@ -143,106 +143,6 @@
             rolListDgv.TabIndex = 1;
             rolListDgv.CellClick += rolListDgv_CellClick;
             // 
-            // panel3
-            // 
-            panel3.Controls.Add(panel4);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(60, 60);
-            panel3.Name = "panel3";
-            panel3.Padding = new Padding(10);
-            panel3.Size = new Size(1561, 90);
-            panel3.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(cuiButton1);
-            panel4.Controls.Add(tableroBtn);
-            panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(1020, 10);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(531, 70);
-            panel4.TabIndex = 0;
-            // 
-            // cuiButton1
-            // 
-            cuiButton1.CheckButton = false;
-            cuiButton1.Checked = false;
-            cuiButton1.CheckedBackground = Color.FromArgb(255, 106, 0);
-            cuiButton1.CheckedForeColor = Color.White;
-            cuiButton1.CheckedImageTint = Color.White;
-            cuiButton1.CheckedOutline = Color.FromArgb(255, 106, 0);
-            cuiButton1.Content = "   Refrescar";
-            cuiButton1.DialogResult = DialogResult.None;
-            cuiButton1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cuiButton1.ForeColor = Color.White;
-            cuiButton1.HoverBackground = Color.FromArgb(128, 155, 235);
-            cuiButton1.HoverForeColor = Color.White;
-            cuiButton1.HoverImageTint = Color.White;
-            cuiButton1.HoverOutline = Color.FromArgb(32, 128, 128, 128);
-            cuiButton1.Image = (Image)resources.GetObject("cuiButton1.Image");
-            cuiButton1.ImageAutoCenter = true;
-            cuiButton1.ImageExpand = new Point(0, 0);
-            cuiButton1.ImageOffset = new Point(0, 0);
-            cuiButton1.Location = new Point(61, 8);
-            cuiButton1.Name = "cuiButton1";
-            cuiButton1.NormalBackground = Color.RoyalBlue;
-            cuiButton1.NormalForeColor = Color.White;
-            cuiButton1.NormalImageTint = Color.White;
-            cuiButton1.NormalOutline = Color.FromArgb(64, 128, 128, 128);
-            cuiButton1.OutlineThickness = 1F;
-            cuiButton1.Padding = new Padding(20, 0, 0, 0);
-            cuiButton1.PressedBackground = Color.FromArgb(43, 70, 150);
-            cuiButton1.PressedForeColor = Color.White;
-            cuiButton1.PressedImageTint = Color.White;
-            cuiButton1.PressedOutline = Color.FromArgb(64, 128, 128, 128);
-            cuiButton1.Rounding = new Padding(8);
-            cuiButton1.Size = new Size(217, 55);
-            cuiButton1.TabIndex = 11;
-            cuiButton1.Tag = "Tablero";
-            cuiButton1.TextAlignment = StringAlignment.Center;
-            cuiButton1.TextOffset = new Point(0, 0);
-            cuiButton1.Click += cuiButton1_Click;
-            // 
-            // tableroBtn
-            // 
-            tableroBtn.CheckButton = false;
-            tableroBtn.Checked = false;
-            tableroBtn.CheckedBackground = Color.FromArgb(255, 106, 0);
-            tableroBtn.CheckedForeColor = Color.White;
-            tableroBtn.CheckedImageTint = Color.White;
-            tableroBtn.CheckedOutline = Color.FromArgb(255, 106, 0);
-            tableroBtn.Content = "   Crear";
-            tableroBtn.DialogResult = DialogResult.None;
-            tableroBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableroBtn.ForeColor = Color.White;
-            tableroBtn.HoverBackground = Color.FromArgb(107, 177, 107);
-            tableroBtn.HoverForeColor = Color.White;
-            tableroBtn.HoverImageTint = Color.White;
-            tableroBtn.HoverOutline = Color.FromArgb(32, 128, 128, 128);
-            tableroBtn.Image = (Image)resources.GetObject("tableroBtn.Image");
-            tableroBtn.ImageAutoCenter = true;
-            tableroBtn.ImageExpand = new Point(0, 0);
-            tableroBtn.ImageOffset = new Point(0, 0);
-            tableroBtn.Location = new Point(299, 8);
-            tableroBtn.Name = "tableroBtn";
-            tableroBtn.NormalBackground = Color.ForestGreen;
-            tableroBtn.NormalForeColor = Color.White;
-            tableroBtn.NormalImageTint = Color.White;
-            tableroBtn.NormalOutline = Color.FromArgb(64, 128, 128, 128);
-            tableroBtn.OutlineThickness = 1F;
-            tableroBtn.Padding = new Padding(20, 0, 0, 0);
-            tableroBtn.PressedBackground = Color.FromArgb(71, 118, 71);
-            tableroBtn.PressedForeColor = Color.White;
-            tableroBtn.PressedImageTint = Color.White;
-            tableroBtn.PressedOutline = Color.FromArgb(64, 128, 128, 128);
-            tableroBtn.Rounding = new Padding(8);
-            tableroBtn.Size = new Size(217, 55);
-            tableroBtn.TabIndex = 10;
-            tableroBtn.Tag = "Tablero";
-            tableroBtn.TextAlignment = StringAlignment.Center;
-            tableroBtn.TextOffset = new Point(0, 0);
-            tableroBtn.Click += tableroBtn_Click;
-            // 
             // Editar
             // 
             Editar.HeaderText = "Editar";
@@ -256,6 +156,106 @@
             Eliminar.Image = (Image)resources.GetObject("Eliminar.Image");
             Eliminar.MinimumWidth = 8;
             Eliminar.Name = "Eliminar";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(panel4);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(60, 60);
+            panel3.Name = "panel3";
+            panel3.Padding = new Padding(10);
+            panel3.Size = new Size(1561, 90);
+            panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(refrescarRolListFormBtn);
+            panel4.Controls.Add(crearRolListFormBtn);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(1020, 10);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(531, 70);
+            panel4.TabIndex = 0;
+            // 
+            // refrescarRolListFormBtn
+            // 
+            refrescarRolListFormBtn.CheckButton = false;
+            refrescarRolListFormBtn.Checked = false;
+            refrescarRolListFormBtn.CheckedBackground = Color.FromArgb(255, 106, 0);
+            refrescarRolListFormBtn.CheckedForeColor = Color.White;
+            refrescarRolListFormBtn.CheckedImageTint = Color.White;
+            refrescarRolListFormBtn.CheckedOutline = Color.FromArgb(255, 106, 0);
+            refrescarRolListFormBtn.Content = "   Refrescar";
+            refrescarRolListFormBtn.DialogResult = DialogResult.None;
+            refrescarRolListFormBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refrescarRolListFormBtn.ForeColor = Color.White;
+            refrescarRolListFormBtn.HoverBackground = Color.FromArgb(128, 155, 235);
+            refrescarRolListFormBtn.HoverForeColor = Color.White;
+            refrescarRolListFormBtn.HoverImageTint = Color.White;
+            refrescarRolListFormBtn.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            refrescarRolListFormBtn.Image = (Image)resources.GetObject("refrescarRolListFormBtn.Image");
+            refrescarRolListFormBtn.ImageAutoCenter = true;
+            refrescarRolListFormBtn.ImageExpand = new Point(0, 0);
+            refrescarRolListFormBtn.ImageOffset = new Point(0, 0);
+            refrescarRolListFormBtn.Location = new Point(61, 8);
+            refrescarRolListFormBtn.Name = "refrescarRolListFormBtn";
+            refrescarRolListFormBtn.NormalBackground = Color.RoyalBlue;
+            refrescarRolListFormBtn.NormalForeColor = Color.White;
+            refrescarRolListFormBtn.NormalImageTint = Color.White;
+            refrescarRolListFormBtn.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            refrescarRolListFormBtn.OutlineThickness = 1F;
+            refrescarRolListFormBtn.Padding = new Padding(20, 0, 0, 0);
+            refrescarRolListFormBtn.PressedBackground = Color.FromArgb(43, 70, 150);
+            refrescarRolListFormBtn.PressedForeColor = Color.White;
+            refrescarRolListFormBtn.PressedImageTint = Color.White;
+            refrescarRolListFormBtn.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            refrescarRolListFormBtn.Rounding = new Padding(8);
+            refrescarRolListFormBtn.Size = new Size(217, 55);
+            refrescarRolListFormBtn.TabIndex = 11;
+            refrescarRolListFormBtn.Tag = "Tablero";
+            refrescarRolListFormBtn.TextAlignment = StringAlignment.Center;
+            refrescarRolListFormBtn.TextOffset = new Point(0, 0);
+            refrescarRolListFormBtn.Click += refrescarRolListFormBtn_Click;
+            // 
+            // crearRolListFormBtn
+            // 
+            crearRolListFormBtn.CheckButton = false;
+            crearRolListFormBtn.Checked = false;
+            crearRolListFormBtn.CheckedBackground = Color.FromArgb(255, 106, 0);
+            crearRolListFormBtn.CheckedForeColor = Color.White;
+            crearRolListFormBtn.CheckedImageTint = Color.White;
+            crearRolListFormBtn.CheckedOutline = Color.FromArgb(255, 106, 0);
+            crearRolListFormBtn.Content = "   Crear";
+            crearRolListFormBtn.DialogResult = DialogResult.None;
+            crearRolListFormBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crearRolListFormBtn.ForeColor = Color.White;
+            crearRolListFormBtn.HoverBackground = Color.FromArgb(107, 177, 107);
+            crearRolListFormBtn.HoverForeColor = Color.White;
+            crearRolListFormBtn.HoverImageTint = Color.White;
+            crearRolListFormBtn.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            crearRolListFormBtn.Image = (Image)resources.GetObject("crearRolListFormBtn.Image");
+            crearRolListFormBtn.ImageAutoCenter = true;
+            crearRolListFormBtn.ImageExpand = new Point(0, 0);
+            crearRolListFormBtn.ImageOffset = new Point(0, 0);
+            crearRolListFormBtn.Location = new Point(299, 8);
+            crearRolListFormBtn.Name = "crearRolListFormBtn";
+            crearRolListFormBtn.NormalBackground = Color.ForestGreen;
+            crearRolListFormBtn.NormalForeColor = Color.White;
+            crearRolListFormBtn.NormalImageTint = Color.White;
+            crearRolListFormBtn.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            crearRolListFormBtn.OutlineThickness = 1F;
+            crearRolListFormBtn.Padding = new Padding(20, 0, 0, 0);
+            crearRolListFormBtn.PressedBackground = Color.FromArgb(71, 118, 71);
+            crearRolListFormBtn.PressedForeColor = Color.White;
+            crearRolListFormBtn.PressedImageTint = Color.White;
+            crearRolListFormBtn.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            crearRolListFormBtn.Rounding = new Padding(8);
+            crearRolListFormBtn.Size = new Size(217, 55);
+            crearRolListFormBtn.TabIndex = 10;
+            crearRolListFormBtn.Tag = "Tablero";
+            crearRolListFormBtn.TextAlignment = StringAlignment.Center;
+            crearRolListFormBtn.TextOffset = new Point(0, 0);
+            crearRolListFormBtn.Click += crearRolListFormBtn_Click;
             // 
             // RolListForm
             // 
@@ -285,8 +285,8 @@
         private DataGridView rolListDgv;
         private Panel panel3;
         private Panel panel4;
-        private CuoreUI.Controls.cuiButton cuiButton1;
-        private CuoreUI.Controls.cuiButton tableroBtn;
+        private CuoreUI.Controls.cuiButton refrescarRolListFormBtn;
+        private CuoreUI.Controls.cuiButton crearRolListFormBtn;
         private DataGridViewImageColumn Editar;
         private DataGridViewImageColumn Eliminar;
     }

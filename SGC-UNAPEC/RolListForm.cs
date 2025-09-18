@@ -55,7 +55,7 @@ namespace SGC_UNAPEC
             }
         }
 
-        private void tableroBtn_Click(object sender, EventArgs e)
+        private void crearRolListFormBtn_Click(object sender, EventArgs e)
         {
             using (RolCreateForm createForm = new RolCreateForm(this))
             {
@@ -66,7 +66,7 @@ namespace SGC_UNAPEC
             }
         }
 
-        private void cuiButton1_Click(object sender, EventArgs e)
+        private void refrescarRolListFormBtn_Click(object sender, EventArgs e)
         {
             CargarRoles();
         }
