@@ -17,5 +17,18 @@ namespace SGC_UNAPEC
         {
             con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SGC_UNAPEC;TrustServerCertificate=True");
         }
+
+        public int ExecuteScalarQuery(string query)
+        {
+            using (var connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SGC_UNAPEC;TrustServerCertificate=True"))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(query, connection))
+                {
+                    object result = command.ExecuteScalar();
+                    return result != null && result != DBNull.Value ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
     }
 }

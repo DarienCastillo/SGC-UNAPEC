@@ -35,15 +35,15 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             cuiPanel5 = new CuoreUI.Controls.cuiPanel();
             cuiLabel2 = new CuoreUI.Controls.cuiLabel();
-            cuiLabel3 = new CuoreUI.Controls.cuiLabel();
+            ingresosDataLbl = new CuoreUI.Controls.cuiLabel();
             cuiLabel4 = new CuoreUI.Controls.cuiLabel();
             cuiPanel6 = new CuoreUI.Controls.cuiPanel();
             cuiLabel5 = new CuoreUI.Controls.cuiLabel();
-            cuiLabel6 = new CuoreUI.Controls.cuiLabel();
+            clientesNuevosHoyDataLbl = new CuoreUI.Controls.cuiLabel();
             cuiLabel7 = new CuoreUI.Controls.cuiLabel();
             cuiPanel7 = new CuoreUI.Controls.cuiPanel();
             cuiLabel8 = new CuoreUI.Controls.cuiLabel();
-            cuiLabel9 = new CuoreUI.Controls.cuiLabel();
+            productosFueraStockDataLbl = new CuoreUI.Controls.cuiLabel();
             cuiLabel10 = new CuoreUI.Controls.cuiLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
             cuiPanel1 = new CuoreUI.Controls.cuiPanel();
@@ -52,15 +52,15 @@
             ventasTitleLbl = new CuoreUI.Controls.cuiLabel();
             cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             usuariosDescLbl = new CuoreUI.Controls.cuiLabel();
-            usuariosDataLbl = new CuoreUI.Controls.cuiLabel();
+            pedidosPendientesDataLbl = new CuoreUI.Controls.cuiLabel();
             usuariosTitleLbl = new CuoreUI.Controls.cuiLabel();
             cuiPanel3 = new CuoreUI.Controls.cuiPanel();
             articulosDescLbl = new CuoreUI.Controls.cuiLabel();
-            articulosDataLbl = new CuoreUI.Controls.cuiLabel();
+            productosStockCriticoDataLbl = new CuoreUI.Controls.cuiLabel();
             articulosTitleLbl = new CuoreUI.Controls.cuiLabel();
             cuiPanel4 = new CuoreUI.Controls.cuiPanel();
             empleadosDescLbl = new CuoreUI.Controls.cuiLabel();
-            empleadosDataLbl = new CuoreUI.Controls.cuiLabel();
+            clientesAtendidosHoyDataLbl = new CuoreUI.Controls.cuiLabel();
             empleadosTitleLbl = new CuoreUI.Controls.cuiLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -146,7 +146,7 @@
             // cuiPanel5
             // 
             cuiPanel5.Controls.Add(cuiLabel2);
-            cuiPanel5.Controls.Add(cuiLabel3);
+            cuiPanel5.Controls.Add(ingresosDataLbl);
             cuiPanel5.Controls.Add(cuiLabel4);
             cuiPanel5.Dock = DockStyle.Fill;
             cuiPanel5.Location = new Point(0, 10);
@@ -174,20 +174,20 @@
             cuiLabel2.TabIndex = 2;
             cuiLabel2.VerticalAlignment = StringAlignment.Near;
             // 
-            // cuiLabel3
+            // ingresosDataLbl
             // 
-            cuiLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cuiLabel3.BackColor = Color.Transparent;
-            cuiLabel3.Content = "RDS\\ 245,000";
-            cuiLabel3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            cuiLabel3.ForeColor = Color.White;
-            cuiLabel3.HorizontalAlignment = StringAlignment.Far;
-            cuiLabel3.Location = new Point(149, 74);
-            cuiLabel3.Margin = new Padding(5, 6, 5, 6);
-            cuiLabel3.Name = "cuiLabel3";
-            cuiLabel3.Size = new Size(360, 59);
-            cuiLabel3.TabIndex = 1;
-            cuiLabel3.VerticalAlignment = StringAlignment.Near;
+            ingresosDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ingresosDataLbl.BackColor = Color.Transparent;
+            ingresosDataLbl.Content = "RD\\$\\ 245,000";
+            ingresosDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            ingresosDataLbl.ForeColor = Color.White;
+            ingresosDataLbl.HorizontalAlignment = StringAlignment.Far;
+            ingresosDataLbl.Location = new Point(149, 74);
+            ingresosDataLbl.Margin = new Padding(5, 6, 5, 6);
+            ingresosDataLbl.Name = "ingresosDataLbl";
+            ingresosDataLbl.Size = new Size(360, 59);
+            ingresosDataLbl.TabIndex = 1;
+            ingresosDataLbl.VerticalAlignment = StringAlignment.Near;
             // 
             // cuiLabel4
             // 
@@ -206,7 +206,7 @@
             // cuiPanel6
             // 
             cuiPanel6.Controls.Add(cuiLabel5);
-            cuiPanel6.Controls.Add(cuiLabel6);
+            cuiPanel6.Controls.Add(clientesNuevosHoyDataLbl);
             cuiPanel6.Controls.Add(cuiLabel7);
             cuiPanel6.Dock = DockStyle.Fill;
             cuiPanel6.Location = new Point(534, 10);
@@ -234,20 +234,20 @@
             cuiLabel5.TabIndex = 5;
             cuiLabel5.VerticalAlignment = StringAlignment.Near;
             // 
-            // cuiLabel6
+            // clientesNuevosHoyDataLbl
             // 
-            cuiLabel6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cuiLabel6.BackColor = Color.Transparent;
-            cuiLabel6.Content = "12";
-            cuiLabel6.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            cuiLabel6.ForeColor = Color.White;
-            cuiLabel6.HorizontalAlignment = StringAlignment.Far;
-            cuiLabel6.Location = new Point(161, 74);
-            cuiLabel6.Margin = new Padding(5, 6, 5, 6);
-            cuiLabel6.Name = "cuiLabel6";
-            cuiLabel6.Size = new Size(344, 59);
-            cuiLabel6.TabIndex = 4;
-            cuiLabel6.VerticalAlignment = StringAlignment.Near;
+            clientesNuevosHoyDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            clientesNuevosHoyDataLbl.BackColor = Color.Transparent;
+            clientesNuevosHoyDataLbl.Content = "12";
+            clientesNuevosHoyDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            clientesNuevosHoyDataLbl.ForeColor = Color.White;
+            clientesNuevosHoyDataLbl.HorizontalAlignment = StringAlignment.Far;
+            clientesNuevosHoyDataLbl.Location = new Point(161, 74);
+            clientesNuevosHoyDataLbl.Margin = new Padding(5, 6, 5, 6);
+            clientesNuevosHoyDataLbl.Name = "clientesNuevosHoyDataLbl";
+            clientesNuevosHoyDataLbl.Size = new Size(344, 59);
+            clientesNuevosHoyDataLbl.TabIndex = 4;
+            clientesNuevosHoyDataLbl.VerticalAlignment = StringAlignment.Near;
             // 
             // cuiLabel7
             // 
@@ -266,7 +266,7 @@
             // cuiPanel7
             // 
             cuiPanel7.Controls.Add(cuiLabel8);
-            cuiPanel7.Controls.Add(cuiLabel9);
+            cuiPanel7.Controls.Add(productosFueraStockDataLbl);
             cuiPanel7.Controls.Add(cuiLabel10);
             cuiPanel7.Dock = DockStyle.Fill;
             cuiPanel7.Location = new Point(1068, 10);
@@ -294,20 +294,20 @@
             cuiLabel8.TabIndex = 8;
             cuiLabel8.VerticalAlignment = StringAlignment.Near;
             // 
-            // cuiLabel9
+            // productosFueraStockDataLbl
             // 
-            cuiLabel9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cuiLabel9.BackColor = Color.Transparent;
-            cuiLabel9.Content = "5";
-            cuiLabel9.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            cuiLabel9.ForeColor = Color.White;
-            cuiLabel9.HorizontalAlignment = StringAlignment.Far;
-            cuiLabel9.Location = new Point(160, 74);
-            cuiLabel9.Margin = new Padding(5, 6, 5, 6);
-            cuiLabel9.Name = "cuiLabel9";
-            cuiLabel9.Size = new Size(356, 59);
-            cuiLabel9.TabIndex = 7;
-            cuiLabel9.VerticalAlignment = StringAlignment.Near;
+            productosFueraStockDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            productosFueraStockDataLbl.BackColor = Color.Transparent;
+            productosFueraStockDataLbl.Content = "5";
+            productosFueraStockDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            productosFueraStockDataLbl.ForeColor = Color.White;
+            productosFueraStockDataLbl.HorizontalAlignment = StringAlignment.Far;
+            productosFueraStockDataLbl.Location = new Point(160, 74);
+            productosFueraStockDataLbl.Margin = new Padding(5, 6, 5, 6);
+            productosFueraStockDataLbl.Name = "productosFueraStockDataLbl";
+            productosFueraStockDataLbl.Size = new Size(356, 59);
+            productosFueraStockDataLbl.TabIndex = 7;
+            productosFueraStockDataLbl.VerticalAlignment = StringAlignment.Near;
             // 
             // cuiLabel10
             // 
@@ -407,7 +407,7 @@
             // cuiPanel2
             // 
             cuiPanel2.Controls.Add(usuariosDescLbl);
-            cuiPanel2.Controls.Add(usuariosDataLbl);
+            cuiPanel2.Controls.Add(pedidosPendientesDataLbl);
             cuiPanel2.Controls.Add(usuariosTitleLbl);
             cuiPanel2.Dock = DockStyle.Fill;
             cuiPanel2.Location = new Point(400, 10);
@@ -435,20 +435,20 @@
             usuariosDescLbl.TabIndex = 5;
             usuariosDescLbl.VerticalAlignment = StringAlignment.Near;
             // 
-            // usuariosDataLbl
+            // pedidosPendientesDataLbl
             // 
-            usuariosDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            usuariosDataLbl.BackColor = Color.Transparent;
-            usuariosDataLbl.Content = "18";
-            usuariosDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            usuariosDataLbl.ForeColor = Color.White;
-            usuariosDataLbl.HorizontalAlignment = StringAlignment.Far;
-            usuariosDataLbl.Location = new Point(27, 74);
-            usuariosDataLbl.Margin = new Padding(5, 6, 5, 6);
-            usuariosDataLbl.Name = "usuariosDataLbl";
-            usuariosDataLbl.Size = new Size(344, 59);
-            usuariosDataLbl.TabIndex = 4;
-            usuariosDataLbl.VerticalAlignment = StringAlignment.Near;
+            pedidosPendientesDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pedidosPendientesDataLbl.BackColor = Color.Transparent;
+            pedidosPendientesDataLbl.Content = "18";
+            pedidosPendientesDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            pedidosPendientesDataLbl.ForeColor = Color.White;
+            pedidosPendientesDataLbl.HorizontalAlignment = StringAlignment.Far;
+            pedidosPendientesDataLbl.Location = new Point(27, 74);
+            pedidosPendientesDataLbl.Margin = new Padding(5, 6, 5, 6);
+            pedidosPendientesDataLbl.Name = "pedidosPendientesDataLbl";
+            pedidosPendientesDataLbl.Size = new Size(344, 59);
+            pedidosPendientesDataLbl.TabIndex = 4;
+            pedidosPendientesDataLbl.VerticalAlignment = StringAlignment.Near;
             // 
             // usuariosTitleLbl
             // 
@@ -467,7 +467,7 @@
             // cuiPanel3
             // 
             cuiPanel3.Controls.Add(articulosDescLbl);
-            cuiPanel3.Controls.Add(articulosDataLbl);
+            cuiPanel3.Controls.Add(productosStockCriticoDataLbl);
             cuiPanel3.Controls.Add(articulosTitleLbl);
             cuiPanel3.Dock = DockStyle.Fill;
             cuiPanel3.Location = new Point(800, 10);
@@ -495,20 +495,20 @@
             articulosDescLbl.TabIndex = 8;
             articulosDescLbl.VerticalAlignment = StringAlignment.Near;
             // 
-            // articulosDataLbl
+            // productosStockCriticoDataLbl
             // 
-            articulosDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            articulosDataLbl.BackColor = Color.Transparent;
-            articulosDataLbl.Content = "7";
-            articulosDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            articulosDataLbl.ForeColor = Color.White;
-            articulosDataLbl.HorizontalAlignment = StringAlignment.Far;
-            articulosDataLbl.Location = new Point(15, 74);
-            articulosDataLbl.Margin = new Padding(5, 6, 5, 6);
-            articulosDataLbl.Name = "articulosDataLbl";
-            articulosDataLbl.Size = new Size(356, 59);
-            articulosDataLbl.TabIndex = 7;
-            articulosDataLbl.VerticalAlignment = StringAlignment.Near;
+            productosStockCriticoDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            productosStockCriticoDataLbl.BackColor = Color.Transparent;
+            productosStockCriticoDataLbl.Content = "7";
+            productosStockCriticoDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            productosStockCriticoDataLbl.ForeColor = Color.White;
+            productosStockCriticoDataLbl.HorizontalAlignment = StringAlignment.Far;
+            productosStockCriticoDataLbl.Location = new Point(15, 74);
+            productosStockCriticoDataLbl.Margin = new Padding(5, 6, 5, 6);
+            productosStockCriticoDataLbl.Name = "productosStockCriticoDataLbl";
+            productosStockCriticoDataLbl.Size = new Size(356, 59);
+            productosStockCriticoDataLbl.TabIndex = 7;
+            productosStockCriticoDataLbl.VerticalAlignment = StringAlignment.Near;
             // 
             // articulosTitleLbl
             // 
@@ -527,7 +527,7 @@
             // cuiPanel4
             // 
             cuiPanel4.Controls.Add(empleadosDescLbl);
-            cuiPanel4.Controls.Add(empleadosDataLbl);
+            cuiPanel4.Controls.Add(clientesAtendidosHoyDataLbl);
             cuiPanel4.Controls.Add(empleadosTitleLbl);
             cuiPanel4.Dock = DockStyle.Fill;
             cuiPanel4.Location = new Point(1200, 10);
@@ -555,20 +555,20 @@
             empleadosDescLbl.TabIndex = 8;
             empleadosDescLbl.VerticalAlignment = StringAlignment.Near;
             // 
-            // empleadosDataLbl
+            // clientesAtendidosHoyDataLbl
             // 
-            empleadosDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            empleadosDataLbl.BackColor = Color.Transparent;
-            empleadosDataLbl.Content = "56";
-            empleadosDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            empleadosDataLbl.ForeColor = Color.White;
-            empleadosDataLbl.HorizontalAlignment = StringAlignment.Far;
-            empleadosDataLbl.Location = new Point(18, 74);
-            empleadosDataLbl.Margin = new Padding(5, 6, 5, 6);
-            empleadosDataLbl.Name = "empleadosDataLbl";
-            empleadosDataLbl.Size = new Size(366, 59);
-            empleadosDataLbl.TabIndex = 7;
-            empleadosDataLbl.VerticalAlignment = StringAlignment.Near;
+            clientesAtendidosHoyDataLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            clientesAtendidosHoyDataLbl.BackColor = Color.Transparent;
+            clientesAtendidosHoyDataLbl.Content = "56";
+            clientesAtendidosHoyDataLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            clientesAtendidosHoyDataLbl.ForeColor = Color.White;
+            clientesAtendidosHoyDataLbl.HorizontalAlignment = StringAlignment.Far;
+            clientesAtendidosHoyDataLbl.Location = new Point(18, 74);
+            clientesAtendidosHoyDataLbl.Margin = new Padding(5, 6, 5, 6);
+            clientesAtendidosHoyDataLbl.Name = "clientesAtendidosHoyDataLbl";
+            clientesAtendidosHoyDataLbl.Size = new Size(366, 59);
+            clientesAtendidosHoyDataLbl.TabIndex = 7;
+            clientesAtendidosHoyDataLbl.VerticalAlignment = StringAlignment.Near;
             // 
             // empleadosTitleLbl
             // 
@@ -618,15 +618,15 @@
         private TableLayoutPanel tableLayoutPanel2;
         private CuoreUI.Controls.cuiPanel cuiPanel5;
         private CuoreUI.Controls.cuiLabel cuiLabel2;
-        private CuoreUI.Controls.cuiLabel cuiLabel3;
+        private CuoreUI.Controls.cuiLabel ingresosDataLbl;
         private CuoreUI.Controls.cuiLabel cuiLabel4;
         private CuoreUI.Controls.cuiPanel cuiPanel6;
         private CuoreUI.Controls.cuiLabel cuiLabel5;
-        private CuoreUI.Controls.cuiLabel cuiLabel6;
+        private CuoreUI.Controls.cuiLabel clientesNuevosHoyDataLbl;
         private CuoreUI.Controls.cuiLabel cuiLabel7;
         private CuoreUI.Controls.cuiPanel cuiPanel7;
         private CuoreUI.Controls.cuiLabel cuiLabel8;
-        private CuoreUI.Controls.cuiLabel cuiLabel9;
+        private CuoreUI.Controls.cuiLabel productosFueraStockDataLbl;
         private CuoreUI.Controls.cuiLabel cuiLabel10;
         private TableLayoutPanel tableLayoutPanel1;
         private CuoreUI.Controls.cuiPanel cuiPanel1;
@@ -635,15 +635,15 @@
         private CuoreUI.Controls.cuiLabel ventasTitleLbl;
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private CuoreUI.Controls.cuiLabel usuariosDescLbl;
-        private CuoreUI.Controls.cuiLabel usuariosDataLbl;
+        private CuoreUI.Controls.cuiLabel pedidosPendientesDataLbl;
         private CuoreUI.Controls.cuiLabel usuariosTitleLbl;
         private CuoreUI.Controls.cuiPanel cuiPanel3;
         private CuoreUI.Controls.cuiLabel articulosDescLbl;
-        private CuoreUI.Controls.cuiLabel articulosDataLbl;
+        private CuoreUI.Controls.cuiLabel productosStockCriticoDataLbl;
         private CuoreUI.Controls.cuiLabel articulosTitleLbl;
         private CuoreUI.Controls.cuiPanel cuiPanel4;
         private CuoreUI.Controls.cuiLabel empleadosDescLbl;
-        private CuoreUI.Controls.cuiLabel empleadosDataLbl;
+        private CuoreUI.Controls.cuiLabel clientesAtendidosHoyDataLbl;
         private CuoreUI.Controls.cuiLabel empleadosTitleLbl;
     }
 }
