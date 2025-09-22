@@ -10,29 +10,29 @@ namespace SGC_UNAPEC
         private int _id;
         private string _nombre;
         private string _cedula;
-        private string _rol;
+        private int _rolId; // Cambia el tipo a int si es posible
         private float _limiteCredito;
         private string _clave;
         private bool _estadoBoolean;
         private UserListForm _userListForm;
 
-        public UserEditForm(int id, string nombre, string cedula, string rol, float limiteCredito, bool estadoBoolean, UserListForm userListForm)
+        public UserEditForm(int id, string nombre, string cedula, int rolId, float limiteCredito, bool estadoBoolean, UserListForm userListForm)
         {
             InitializeComponent();
             _id = id;
             _nombre = nombre;
             _cedula = cedula;
-            _rol = rol;
+            _rolId = rolId; // Guarda el ID del rol
             _limiteCredito = limiteCredito;
             _estadoBoolean = estadoBoolean;
             _userListForm = userListForm;
 
             nombreUserEditFormTxt.Content = _nombre;
             cedulaUserEditFormTxt.Content = _cedula;
-            rolUserEditFormCombo.SelectedItem = _rol;
             limiteCreditoUserEditFormTxt.Content = _limiteCredito.ToString();
             estadoUserEditFormCheck.Checked = _estadoBoolean;
 
+            CargarRoles(); // Llama aquí, la selección se hará dentro de CargarRoles
         }
 
         private void editarRolEditFormBtn_Click(object sender, EventArgs e)
@@ -41,9 +41,7 @@ namespace SGC_UNAPEC
                 if (string.IsNullOrWhiteSpace(nombreUserEditFormTxt.Content) ||
                     string.IsNullOrWhiteSpace(cedulaUserEditFormTxt.Content) ||
                     string.IsNullOrWhiteSpace(rolUserEditFormCombo.SelectedItem.ToString()) ||
-                    string.IsNullOrWhiteSpace(limiteCreditoUserEditFormTxt.Content) ||
-                    string.IsNullOrWhiteSpace(nuevaContraseñaUserEditFormTxt.Content) ||
-                    string.IsNullOrWhiteSpace(confirmarContraseñaUserEditFormTxt.Content)
+                    string.IsNullOrWhiteSpace(limiteCreditoUserEditFormTxt.Content)
                     )
                 {
                     MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,10 +69,15 @@ namespace SGC_UNAPEC
 
         public void ActualizarUsuario()
         {
-            if (nuevaContraseñaUserEditFormTxt.Content != confirmarContraseñaUserEditFormTxt.Content)
+            // Solo validar contraseñas si se ha ingresado una nueva
+            if (!string.IsNullOrWhiteSpace(nuevaContraseñaUserEditFormTxt.Content) ||
+                !string.IsNullOrWhiteSpace(confirmarContraseñaUserEditFormTxt.Content))
             {
-                MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (nuevaContraseñaUserEditFormTxt.Content != confirmarContraseñaUserEditFormTxt.Content)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
 
             nombreUserEditFormTxt.Content = nombreUserEditFormTxt.Content.Trim();
@@ -85,30 +88,49 @@ namespace SGC_UNAPEC
             confirmarContraseñaUserEditFormTxt.Content = confirmarContraseñaUserEditFormTxt.Content.Trim();
             int estado = estadoUserEditFormCheck.Checked ? 1 : 0;
 
-            // Hashear la nueva contraseña
-            string hashedPassword = HashPassword(nuevaContraseñaUserEditFormTxt.Content);
-
             try
             {
                 using (var command = new Microsoft.Data.SqlClient.SqlCommand())
                 {
                     command.Connection = DBConnection.con;
-                    command.CommandText = @"
-                        UPDATE usuarios 
-                        SET nombre = @nombre, 
-                            cedula = @cedula, 
-                            rol = @rol, 
-                            limite_credito = @limite_credito, 
-                            clave = @clave, 
-                            estado = @estado
-                        WHERE ID = @id";
+
+                    // Construir el query dinámicamente según si se cambia la contraseña
+                    if (!string.IsNullOrWhiteSpace(nuevaContraseñaUserEditFormTxt.Content))
+                    {
+                        string hashedPassword = HashPassword(nuevaContraseñaUserEditFormTxt.Content);
+                        command.CommandText = @"
+                            UPDATE usuarios 
+                            SET nombre = @nombre, 
+                                cedula = @cedula, 
+                                tipo_usuario_id = @rol, 
+                                limite_credito = @limite_credito, 
+                                clave = @clave, 
+                                estado = @estado,
+                                fecha_modificacion = @fecha_modificacion
+                            WHERE ID = @id";
+                        command.Parameters.AddWithValue("@clave", hashedPassword);
+                    }
+                    else
+                    {
+                        command.CommandText = @"
+                            UPDATE usuarios 
+                            SET nombre = @nombre, 
+                                cedula = @cedula, 
+                                tipo_usuario_id = @rol, 
+                                limite_credito = @limite_credito, 
+                                estado = @estado,
+                                fecha_modificacion = @fecha_modificacion
+                            WHERE ID = @id";
+                    }
+
                     command.Parameters.AddWithValue("@nombre", nombreUserEditFormTxt.Content);
                     command.Parameters.AddWithValue("@cedula", cedulaUserEditFormTxt.Content);
-                    command.Parameters.AddWithValue("@rol", rolUserEditFormCombo.SelectedItem);
+                    command.Parameters.AddWithValue("@rol", ((KeyValuePair<int, string>)rolUserEditFormCombo.SelectedItem).Key);
                     command.Parameters.AddWithValue("@limite_credito", limiteCreditoUserEditFormTxt.Content);
-                    command.Parameters.AddWithValue("@clave", hashedPassword); // Usar la contraseña hasheada
                     command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@fecha_modificacion", DateTime.Now);
                     command.Parameters.AddWithValue("@id", _id);
+
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
@@ -137,16 +159,32 @@ namespace SGC_UNAPEC
                 {
                     DBConnection.con.Open();
                 }
-                string query = "SELECT tipo_usuario FROM tipo_usuarios WHERE estado = 1";
+                string query = "SELECT id, tipo_usuario FROM tipo_usuarios WHERE estado = 1";
                 using (SqlCommand command = new SqlCommand(query, DBConnection.con))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        rolUserEditFormCombo.Refresh(); // Limpia antes de agregar
+                        rolUserEditFormCombo.Items.Clear();
                         while (reader.Read())
                         {
-                            rolUserEditFormCombo.AddItem(reader["tipo_usuario"].ToString());
+                            int id = Convert.ToInt32(reader["id"]);
+                            string nombre = reader["tipo_usuario"].ToString();
+                            rolUserEditFormCombo.Items.Add(new KeyValuePair<int, string>(id, nombre));
                         }
+                    }
+                }
+
+                rolUserEditFormCombo.DisplayMember = "Value";
+                rolUserEditFormCombo.ValueMember = "Key";
+
+                // Selecciona el rol actual después de cargar los roles
+                foreach (var item in rolUserEditFormCombo.Items)
+                {
+                    var kvp = (KeyValuePair<int, string>)item;
+                    if (kvp.Key == _rolId)
+                    {
+                        rolUserEditFormCombo.SelectedItem = item;
+                        break;
                     }
                 }
             }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserEditForm));
             cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             cuiPanel2 = new CuoreUI.Controls.cuiPanel();
+            rolUserEditFormCombo = new ComboBox();
             editarRolEditFormBtn = new CuoreUI.Controls.cuiButton();
             cuiLabel8 = new CuoreUI.Controls.cuiLabel();
             confirmarContraseñaUserEditFormTxt = new CuoreUI.Controls.cuiTextBox();
@@ -47,7 +48,6 @@
             cuiLabel2 = new CuoreUI.Controls.cuiLabel();
             cuiSeparator1 = new CuoreUI.Controls.cuiSeparator();
             cuiLabel3 = new CuoreUI.Controls.cuiLabel();
-            rolUserEditFormCombo = new CuoreUI.Controls.cuiComboBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             cuiPanel1.SuspendLayout();
             cuiPanel2.SuspendLayout();
@@ -94,6 +94,14 @@
             cuiPanel2.Rounding = new Padding(20);
             cuiPanel2.Size = new Size(1196, 510);
             cuiPanel2.TabIndex = 8;
+            // 
+            // rolUserEditFormCombo
+            // 
+            rolUserEditFormCombo.FormattingEnabled = true;
+            rolUserEditFormCombo.Location = new Point(816, 75);
+            rolUserEditFormCombo.Name = "rolUserEditFormCombo";
+            rolUserEditFormCombo.Size = new Size(360, 33);
+            rolUserEditFormCombo.TabIndex = 24;
             // 
             // editarRolEditFormBtn
             // 
@@ -171,8 +179,8 @@
             confirmarContraseñaUserEditFormTxt.OutlineColor = Color.FromArgb(128, 128, 128, 128);
             confirmarContraseñaUserEditFormTxt.Padding = new Padding(22, 15, 22, 0);
             confirmarContraseñaUserEditFormTxt.PasswordChar = false;
-            confirmarContraseñaUserEditFormTxt.PlaceholderColor = SystemColors.WindowText;
-            confirmarContraseñaUserEditFormTxt.PlaceholderText = "";
+            confirmarContraseñaUserEditFormTxt.PlaceholderColor = Color.FromArgb(128, 128, 128, 128);
+            confirmarContraseñaUserEditFormTxt.PlaceholderText = "Dejar vacío para no cambiar";
             confirmarContraseñaUserEditFormTxt.Rounding = new Padding(8);
             confirmarContraseñaUserEditFormTxt.Size = new Size(360, 53);
             confirmarContraseñaUserEditFormTxt.TabIndex = 22;
@@ -214,8 +222,8 @@
             nuevaContraseñaUserEditFormTxt.OutlineColor = Color.FromArgb(128, 128, 128, 128);
             nuevaContraseñaUserEditFormTxt.Padding = new Padding(22, 15, 22, 0);
             nuevaContraseñaUserEditFormTxt.PasswordChar = false;
-            nuevaContraseñaUserEditFormTxt.PlaceholderColor = SystemColors.WindowText;
-            nuevaContraseñaUserEditFormTxt.PlaceholderText = "";
+            nuevaContraseñaUserEditFormTxt.PlaceholderColor = Color.FromArgb(128, 128, 128, 128);
+            nuevaContraseñaUserEditFormTxt.PlaceholderText = "Dejar vacío para no cambiar";
             nuevaContraseñaUserEditFormTxt.Rounding = new Padding(8);
             nuevaContraseñaUserEditFormTxt.Size = new Size(360, 53);
             nuevaContraseñaUserEditFormTxt.TabIndex = 20;
@@ -272,7 +280,7 @@
             cuiLabel5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             cuiLabel5.ForeColor = SystemColors.ControlDarkDark;
             cuiLabel5.HorizontalAlignment = StringAlignment.Near;
-            cuiLabel5.Location = new Point(816, 38);
+            cuiLabel5.Location = new Point(816, 33);
             cuiLabel5.Margin = new Padding(5, 6, 5, 6);
             cuiLabel5.Name = "cuiLabel5";
             cuiLabel5.Size = new Size(360, 33);
@@ -428,32 +436,6 @@
             cuiLabel3.TabIndex = 7;
             cuiLabel3.VerticalAlignment = StringAlignment.Near;
             // 
-            // rolUserEditFormCombo
-            // 
-            rolUserEditFormCombo.BackColor = Color.Transparent;
-            rolUserEditFormCombo.BackgroundColor = Color.FromArgb(255, 255, 255);
-            rolUserEditFormCombo.ButtonCursor = Cursors.Arrow;
-            rolUserEditFormCombo.ButtonHoverBackground = Color.FromArgb(192, 255, 106, 0);
-            rolUserEditFormCombo.ButtonHoverOutline = Color.Empty;
-            rolUserEditFormCombo.ButtonNormalBackground = Color.FromArgb(255, 106, 0);
-            rolUserEditFormCombo.ButtonNormalOutline = Color.Empty;
-            rolUserEditFormCombo.ButtonPressedBackground = Color.FromArgb(255, 106, 0);
-            rolUserEditFormCombo.ButtonPressedOutline = Color.Empty;
-            rolUserEditFormCombo.DropDownBackgroundColor = Color.White;
-            rolUserEditFormCombo.DropDownOutlineColor = Color.FromArgb(30, 255, 255, 255);
-            rolUserEditFormCombo.ExpandArrowColor = Color.Gray;
-            rolUserEditFormCombo.ForeColor = Color.Gray;
-            rolUserEditFormCombo.Location = new Point(816, 67);
-            rolUserEditFormCombo.Margin = new Padding(5, 6, 5, 6);
-            rolUserEditFormCombo.Name = "rolUserEditFormCombo";
-            rolUserEditFormCombo.NoSelectionDropdownText = "Empty";
-            rolUserEditFormCombo.NoSelectionText = "None";
-            rolUserEditFormCombo.OutlineColor = Color.FromArgb(64, 128, 128, 128);
-            rolUserEditFormCombo.OutlineThickness = 1F;
-            rolUserEditFormCombo.Rounding = 8;
-            rolUserEditFormCombo.Size = new Size(360, 53);
-            rolUserEditFormCombo.TabIndex = 24;
-            // 
             // UserEditForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -490,7 +472,7 @@
         private CuoreUI.Controls.cuiSeparator cuiSeparator1;
         private CuoreUI.Controls.cuiLabel cuiLabel3;
         private CuoreUI.Controls.cuiButton editarRolEditFormBtn;
-        private CuoreUI.Controls.cuiComboBox rolUserEditFormCombo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ComboBox rolUserEditFormCombo;
     }
 }

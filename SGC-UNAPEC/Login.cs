@@ -1,6 +1,8 @@
 using CuoreUI.Controls;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace SGC_UNAPEC
 {
@@ -20,6 +22,17 @@ namespace SGC_UNAPEC
             cuiCheckbox1.Content = cuiCheckbox1.Checked ? "Ocultar" : "Mostrar";
         }
 
+        // Método para hashear la contraseña igual que en UserEditForm
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
+
         private void cuiButton1_Click(object sender, EventArgs e)
         {
             if (DBConnection.con.State == ConnectionState.Closed)
@@ -27,11 +40,14 @@ namespace SGC_UNAPEC
                 DBConnection.con.Open();
             }
 
+            // Hashear la contraseña ingresada antes de comparar
+            string hashedPassword = HashPassword(cuiTextBox2.Content);
+
             string query = "SELECT * FROM usuarios WHERE nombre = @nombre AND clave = @clave";
             using (SqlCommand command = new SqlCommand(query, DBConnection.con))
             {
                 command.Parameters.AddWithValue("@nombre", cuiTextBox1.Content);
-                command.Parameters.AddWithValue("@clave", cuiTextBox2.Content);
+                command.Parameters.AddWithValue("@clave", hashedPassword);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

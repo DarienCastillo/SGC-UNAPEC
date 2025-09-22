@@ -610,22 +610,70 @@ namespace SGC_UNAPEC
         private void MainPanel_Load(object sender, EventArgs e)
         {
             OpenForm(new TableroForm());
+            // Restaurar color normal de todos los botones
+            tableroBtn.NormalBackground = Color.FromArgb(10, 35, 70); // Color original
+
+            // Resaltar solo el botón activo
+            if (FormPanel.Controls.OfType<TableroForm>().Any())
+            {
+                tableroBtn.NormalBackground = tableroBtn.HoverBackground;
+            }
         }
 
         private void tableroBtn_Click(object sender, EventArgs e)
         {
+            // Restaurar colores normales de todos los botones
+            tableroBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            ventasBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            gestionBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            
             OpenForm(new TableroForm());
+
+            // Resaltar solo el botón activo
+            if (FormPanel.Controls.OfType<TableroForm>().Any())
+            {
+                tableroBtn.NormalBackground = tableroBtn.HoverBackground;
+            }
+            else
+            {
+                tableroBtn.NormalBackground = Color.FromArgb(10, 35, 70); // Color original
+            }
         }
 
 
         private void gestiónDeTiposDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tableroBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            ventasBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            gestionBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+
             OpenForm(new RolListForm());
+            if (FormPanel.Controls.OfType<RolListForm>().Any())
+            {
+                gestionBtn.NormalBackground = gestionBtn.HoverBackground;
+            }
+            else
+            {
+                gestionBtn.NormalBackground = Color.FromArgb(10, 35, 70); // Color original
+            }
         }
 
         private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tableroBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            ventasBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+            gestionBtn.NormalBackground = Color.FromArgb(10, 35, 70);
+
             OpenForm(new UserListForm());
+            if (FormPanel.Controls.OfType<UserListForm>().Any())
+            {
+                gestionBtn.NormalBackground = gestionBtn.HoverBackground;
+            }
+            else
+            {
+                gestionBtn.NormalBackground = Color.FromArgb(10, 35, 70); // Color original
+            }
+
         }
     }
 }

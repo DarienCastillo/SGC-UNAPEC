@@ -39,6 +39,7 @@ namespace SGC_UNAPEC
         u.nombre AS 'Nombre', 
         u.cedula AS 'Cédula', 
         tu.tipo_usuario AS 'Rol',
+        tu.id AS 'RolID', -- <--- Agrega esta línea
         u.limite_credito AS 'Límite de Crédito',
         CASE 
             WHEN u.estado = 1 THEN 'Activo'
@@ -64,6 +65,7 @@ namespace SGC_UNAPEC
                     userListDgv.Columns["Nombre"].DisplayIndex = 0;
                     userListDgv.Columns["Cédula"].DisplayIndex = 1;
                     userListDgv.Columns["Rol"].DisplayIndex = 2;
+                    userListDgv.Columns["RolID"].Visible = false; // Oculta la columna RolID
                     userListDgv.Columns["Límite de Crédito"].DisplayIndex = 3;
                     userListDgv.Columns["Estado"].DisplayIndex = 4;
                     userListDgv.Columns["Fecha de Registro"].DisplayIndex = 5;
@@ -109,12 +111,13 @@ namespace SGC_UNAPEC
                     string nombre = userListDgv.Rows[rowIndex].Cells["Nombre"].Value.ToString();
                     string cedula = userListDgv.Rows[rowIndex].Cells["Cédula"].Value.ToString();
                     string rol = userListDgv.Rows[rowIndex].Cells["Rol"].Value.ToString();
+                    int rolId = Convert.ToInt32(userListDgv.Rows[rowIndex].Cells["RolID"].Value);
                     int limiteCredito = Convert.ToInt32(userListDgv.Rows[rowIndex].Cells["Límite de Crédito"].Value);
                     string estado = userListDgv.Rows[rowIndex].Cells["Estado"].Value.ToString();
                     bool estadoBoolean = estado == "Activo";
 
                     // Abrir formulario de edición con los datos
-                    using (UserEditForm editForm = new UserEditForm(id, nombre, cedula, rol, limiteCredito, estadoBoolean, this))
+                    using (UserEditForm editForm = new UserEditForm(id, nombre, cedula, rolId, limiteCredito, estadoBoolean, this))
                     {
                         if (editForm.ShowDialog() == DialogResult.OK)
                         {
