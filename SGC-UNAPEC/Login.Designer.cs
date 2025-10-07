@@ -99,13 +99,14 @@
             cuiPanel1.Controls.Add(cuiTextBox1);
             cuiPanel1.Controls.Add(cuiSeparator1);
             cuiPanel1.Controls.Add(cuiPictureBox1);
-            cuiPanel1.Location = new Point(86, 81);
+            cuiPanel1.Location = new Point(103, 97);
+            cuiPanel1.Margin = new Padding(4, 4, 4, 4);
             cuiPanel1.Name = "cuiPanel1";
             cuiPanel1.OutlineThickness = 1F;
             cuiPanel1.PanelColor = Color.White;
             cuiPanel1.PanelOutlineColor = Color.Transparent;
             cuiPanel1.Rounding = new Padding(20);
-            cuiPanel1.Size = new Size(545, 772);
+            cuiPanel1.Size = new Size(654, 926);
             cuiPanel1.TabIndex = 0;
             // 
             // cuiCheckbox1
@@ -116,14 +117,15 @@
             cuiCheckbox1.CheckedOutlineColor = Color.DodgerBlue;
             cuiCheckbox1.CheckedSymbolColor = Color.White;
             cuiCheckbox1.Content = "Mostrar";
-            cuiCheckbox1.Location = new Point(410, 538);
-            cuiCheckbox1.MinimumSize = new Size(16, 16);
+            cuiCheckbox1.Location = new Point(492, 646);
+            cuiCheckbox1.Margin = new Padding(4, 4, 4, 4);
+            cuiCheckbox1.MinimumSize = new Size(19, 19);
             cuiCheckbox1.Name = "cuiCheckbox1";
             cuiCheckbox1.OutlineStyle = true;
             cuiCheckbox1.OutlineThickness = 1F;
             cuiCheckbox1.Rounding = 5;
             cuiCheckbox1.ShowSymbols = true;
-            cuiCheckbox1.Size = new Size(132, 31);
+            cuiCheckbox1.Size = new Size(158, 37);
             cuiCheckbox1.TabIndex = 3;
             cuiCheckbox1.Text = "cuiCheckbox1";
             cuiCheckbox1.UncheckedForeground = Color.Empty;
@@ -137,10 +139,10 @@
             cuiLabel4.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cuiLabel4.ForeColor = Color.FromArgb(0, 88, 164);
             cuiLabel4.HorizontalAlignment = StringAlignment.Center;
-            cuiLabel4.Location = new Point(154, 312);
-            cuiLabel4.Margin = new Padding(5, 6, 5, 6);
+            cuiLabel4.Location = new Point(185, 374);
+            cuiLabel4.Margin = new Padding(6, 7, 6, 7);
             cuiLabel4.Name = "cuiLabel4";
-            cuiLabel4.Size = new Size(236, 33);
+            cuiLabel4.Size = new Size(283, 40);
             cuiLabel4.TabIndex = 8;
             cuiLabel4.TabStop = false;
             cuiLabel4.VerticalAlignment = StringAlignment.Near;
@@ -151,10 +153,10 @@
             cuiLabel3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cuiLabel3.ForeColor = SystemColors.ControlDarkDark;
             cuiLabel3.HorizontalAlignment = StringAlignment.Center;
-            cuiLabel3.Location = new Point(59, 266);
-            cuiLabel3.Margin = new Padding(5, 6, 5, 6);
+            cuiLabel3.Location = new Point(71, 319);
+            cuiLabel3.Margin = new Padding(6, 7, 6, 7);
             cuiLabel3.Name = "cuiLabel3";
-            cuiLabel3.Size = new Size(426, 44);
+            cuiLabel3.Size = new Size(511, 53);
             cuiLabel3.TabIndex = 7;
             cuiLabel3.TabStop = false;
             cuiLabel3.VerticalAlignment = StringAlignment.Near;
@@ -180,7 +182,8 @@
             cuiButton1.ImageAutoCenter = true;
             cuiButton1.ImageExpand = new Point(0, 0);
             cuiButton1.ImageOffset = new Point(0, 0);
-            cuiButton1.Location = new Point(173, 635);
+            cuiButton1.Location = new Point(208, 762);
+            cuiButton1.Margin = new Padding(4, 4, 4, 4);
             cuiButton1.Name = "cuiButton1";
             cuiButton1.NormalBackground = Color.FromArgb(0, 88, 164);
             cuiButton1.NormalForeColor = Color.White;
@@ -192,7 +195,7 @@
             cuiButton1.PressedImageTint = Color.White;
             cuiButton1.PressedOutline = Color.FromArgb(64, 128, 128, 128);
             cuiButton1.Rounding = new Padding(8);
-            cuiButton1.Size = new Size(198, 53);
+            cuiButton1.Size = new Size(238, 64);
             cuiButton1.TabIndex = 4;
             cuiButton1.TextAlignment = StringAlignment.Center;
             cuiButton1.TextOffset = new Point(0, 0);
@@ -202,10 +205,10 @@
             // 
             cuiLabel2.Content = "Contraseña";
             cuiLabel2.HorizontalAlignment = StringAlignment.Near;
-            cuiLabel2.Location = new Point(108, 492);
-            cuiLabel2.Margin = new Padding(5, 6, 5, 6);
+            cuiLabel2.Location = new Point(130, 590);
+            cuiLabel2.Margin = new Padding(6, 7, 6, 7);
             cuiLabel2.Name = "cuiLabel2";
-            cuiLabel2.Size = new Size(113, 24);
+            cuiLabel2.Size = new Size(136, 29);
             cuiLabel2.TabIndex = 5;
             cuiLabel2.TabStop = false;
             cuiLabel2.VerticalAlignment = StringAlignment.Near;
@@ -223,18 +226,18 @@
             cuiTextBox2.Image = null;
             cuiTextBox2.ImageExpand = new Point(0, 0);
             cuiTextBox2.ImageOffset = new Point(0, 0);
-            cuiTextBox2.Location = new Point(108, 526);
-            cuiTextBox2.Margin = new Padding(4);
+            cuiTextBox2.Location = new Point(130, 631);
+            cuiTextBox2.Margin = new Padding(5, 5, 5, 5);
             cuiTextBox2.Multiline = false;
             cuiTextBox2.Name = "cuiTextBox2";
             cuiTextBox2.NormalImageTint = Color.White;
             cuiTextBox2.OutlineColor = Color.FromArgb(128, 128, 128, 128);
-            cuiTextBox2.Padding = new Padding(22, 15, 22, 0);
+            cuiTextBox2.Padding = new Padding(26, 19, 26, 0);
             cuiTextBox2.PasswordChar = true;
             cuiTextBox2.PlaceholderColor = SystemColors.WindowText;
             cuiTextBox2.PlaceholderText = "";
             cuiTextBox2.Rounding = new Padding(8);
-            cuiTextBox2.Size = new Size(298, 53);
+            cuiTextBox2.Size = new Size(358, 64);
             cuiTextBox2.TabIndex = 2;
             cuiTextBox2.TextOffset = new Size(0, 0);
             cuiTextBox2.UnderlinedStyle = true;
@@ -243,10 +246,10 @@
             // 
             cuiLabel1.Content = "Usuario";
             cuiLabel1.HorizontalAlignment = StringAlignment.Near;
-            cuiLabel1.Location = new Point(108, 384);
-            cuiLabel1.Margin = new Padding(5, 6, 5, 6);
+            cuiLabel1.Location = new Point(130, 461);
+            cuiLabel1.Margin = new Padding(6, 7, 6, 7);
             cuiLabel1.Name = "cuiLabel1";
-            cuiLabel1.Size = new Size(113, 24);
+            cuiLabel1.Size = new Size(136, 29);
             cuiLabel1.TabIndex = 3;
             cuiLabel1.TabStop = false;
             cuiLabel1.VerticalAlignment = StringAlignment.Near;
@@ -264,18 +267,18 @@
             cuiTextBox1.Image = null;
             cuiTextBox1.ImageExpand = new Point(0, 0);
             cuiTextBox1.ImageOffset = new Point(0, 0);
-            cuiTextBox1.Location = new Point(108, 418);
-            cuiTextBox1.Margin = new Padding(4);
+            cuiTextBox1.Location = new Point(130, 502);
+            cuiTextBox1.Margin = new Padding(5, 5, 5, 5);
             cuiTextBox1.Multiline = false;
             cuiTextBox1.Name = "cuiTextBox1";
             cuiTextBox1.NormalImageTint = Color.White;
             cuiTextBox1.OutlineColor = Color.FromArgb(128, 128, 128, 128);
-            cuiTextBox1.Padding = new Padding(22, 15, 22, 0);
+            cuiTextBox1.Padding = new Padding(26, 19, 26, 0);
             cuiTextBox1.PasswordChar = false;
             cuiTextBox1.PlaceholderColor = SystemColors.WindowText;
             cuiTextBox1.PlaceholderText = "";
             cuiTextBox1.Rounding = new Padding(8);
-            cuiTextBox1.Size = new Size(298, 53);
+            cuiTextBox1.Size = new Size(358, 64);
             cuiTextBox1.TabIndex = 1;
             cuiTextBox1.TextOffset = new Size(0, 0);
             cuiTextBox1.UnderlinedStyle = true;
@@ -283,11 +286,11 @@
             // cuiSeparator1
             // 
             cuiSeparator1.ForeColor = Color.FromArgb(128, 128, 128, 128);
-            cuiSeparator1.Location = new Point(84, 218);
-            cuiSeparator1.Margin = new Padding(5, 6, 5, 6);
+            cuiSeparator1.Location = new Point(101, 262);
+            cuiSeparator1.Margin = new Padding(6, 7, 6, 7);
             cuiSeparator1.Name = "cuiSeparator1";
             cuiSeparator1.SeparatorMargin = 8;
-            cuiSeparator1.Size = new Size(377, 26);
+            cuiSeparator1.Size = new Size(452, 31);
             cuiSeparator1.TabIndex = 1;
             cuiSeparator1.TabStop = false;
             cuiSeparator1.Thickness = 0.5F;
@@ -297,14 +300,14 @@
             // 
             cuiPictureBox1.Content = (Image)resources.GetObject("cuiPictureBox1.Content");
             cuiPictureBox1.ImageTint = Color.White;
-            cuiPictureBox1.Location = new Point(133, 83);
-            cuiPictureBox1.Margin = new Padding(5, 6, 5, 6);
+            cuiPictureBox1.Location = new Point(160, 100);
+            cuiPictureBox1.Margin = new Padding(6, 7, 6, 7);
             cuiPictureBox1.Name = "cuiPictureBox1";
             cuiPictureBox1.OutlineThickness = 1F;
             cuiPictureBox1.PanelOutlineColor = Color.Empty;
             cuiPictureBox1.Rotation = 0;
             cuiPictureBox1.Rounding = new Padding(8);
-            cuiPictureBox1.Size = new Size(278, 137);
+            cuiPictureBox1.Size = new Size(334, 164);
             cuiPictureBox1.TabIndex = 0;
             cuiPictureBox1.TabStop = false;
             // 
@@ -319,16 +322,16 @@
             // 
             // SGC
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(691, 935);
+            ClientSize = new Size(829, 1122);
             Controls.Add(cuiPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(5, 6, 5, 6);
             MaximizeBox = false;
             Name = "SGC";
             SizeGripStyle = SizeGripStyle.Hide;

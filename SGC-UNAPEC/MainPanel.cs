@@ -342,57 +342,58 @@ namespace SGC_UNAPEC
             gestionCms.Items.AddRange(new ToolStripItem[] { gestiónDeCafeteríaToolStripMenuItem, gestiónDeCampusToolStripMenuItem, gestiónDeProveedoresToolStripMenuItem, gestiónDeMarcasToolStripMenuItem, gestiónDeArtículosToolStripMenuItem, gestiónDeRolesToolStripMenuItem, gestionDeUsuariosToolStripMenuItem, gestiónDeEmpleadosToolStripMenuItem });
             gestionCms.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             gestionCms.Name = "gestionCms";
-            gestionCms.Size = new Size(274, 293);
+            gestionCms.Size = new Size(306, 330);
             gestionCms.Text = "Gestión";
             // 
             // gestiónDeCafeteríaToolStripMenuItem
-            // 
             gestiónDeCafeteríaToolStripMenuItem.Name = "gestiónDeCafeteríaToolStripMenuItem";
-            gestiónDeCafeteríaToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeCafeteríaToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeCafeteríaToolStripMenuItem.Text = "Gestión de Cafetería";
-            // 
+            gestiónDeCafeteríaToolStripMenuItem.Click += gestiónDeCafeteríaToolStripMenuItem_Click;
+
             // gestiónDeCampusToolStripMenuItem
-            // 
             gestiónDeCampusToolStripMenuItem.Name = "gestiónDeCampusToolStripMenuItem";
-            gestiónDeCampusToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeCampusToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeCampusToolStripMenuItem.Text = "Gestión de Campus";
+            gestiónDeCampusToolStripMenuItem.Click += gestiónDeCampusToolStripMenuItem_Click;
+
             // 
             // gestiónDeProveedoresToolStripMenuItem
             // 
             gestiónDeProveedoresToolStripMenuItem.Name = "gestiónDeProveedoresToolStripMenuItem";
-            gestiónDeProveedoresToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeProveedoresToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeProveedoresToolStripMenuItem.Text = "Gestión de Proveedores";
             // 
             // gestiónDeMarcasToolStripMenuItem
             // 
             gestiónDeMarcasToolStripMenuItem.Name = "gestiónDeMarcasToolStripMenuItem";
-            gestiónDeMarcasToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeMarcasToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeMarcasToolStripMenuItem.Text = "Gestión de Marcas";
             // 
             // gestiónDeArtículosToolStripMenuItem
             // 
             gestiónDeArtículosToolStripMenuItem.Name = "gestiónDeArtículosToolStripMenuItem";
-            gestiónDeArtículosToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeArtículosToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeArtículosToolStripMenuItem.Text = "Gestión de Artículos";
             // 
             // gestiónDeRolesToolStripMenuItem
             // 
             gestiónDeRolesToolStripMenuItem.Name = "gestiónDeRolesToolStripMenuItem";
-            gestiónDeRolesToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeRolesToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeRolesToolStripMenuItem.Text = "Gestión de Roles";
             gestiónDeRolesToolStripMenuItem.Click += gestiónDeTiposDeUsuarioToolStripMenuItem_Click;
             // 
             // gestionDeUsuariosToolStripMenuItem
             // 
             gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            gestionDeUsuariosToolStripMenuItem.Size = new Size(273, 32);
+            gestionDeUsuariosToolStripMenuItem.Size = new Size(305, 36);
             gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
             gestionDeUsuariosToolStripMenuItem.Click += gestionDeUsuariosToolStripMenuItem_Click;
             // 
             // gestiónDeEmpleadosToolStripMenuItem
             // 
             gestiónDeEmpleadosToolStripMenuItem.Name = "gestiónDeEmpleadosToolStripMenuItem";
-            gestiónDeEmpleadosToolStripMenuItem.Size = new Size(273, 32);
+            gestiónDeEmpleadosToolStripMenuItem.Size = new Size(305, 36);
             gestiónDeEmpleadosToolStripMenuItem.Text = "Gestión de Empleados";
             // 
             // ventasCms
@@ -402,19 +403,19 @@ namespace SGC_UNAPEC
             ventasCms.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2 });
             ventasCms.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             ventasCms.Name = "gestionCms";
-            ventasCms.Size = new Size(160, 68);
+            ventasCms.Size = new Size(175, 76);
             ventasCms.Text = "Gestión";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(159, 32);
+            toolStripMenuItem1.Size = new Size(174, 36);
             toolStripMenuItem1.Text = "Vender";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(159, 32);
+            toolStripMenuItem2.Size = new Size(174, 36);
             toolStripMenuItem2.Text = "Consultar";
             // 
             // FormPanel
@@ -626,7 +627,7 @@ namespace SGC_UNAPEC
             tableroBtn.NormalBackground = Color.FromArgb(10, 35, 70);
             ventasBtn.NormalBackground = Color.FromArgb(10, 35, 70);
             gestionBtn.NormalBackground = Color.FromArgb(10, 35, 70);
-            
+
             OpenForm(new TableroForm());
 
             // Resaltar solo el botón activo
@@ -675,5 +676,16 @@ namespace SGC_UNAPEC
             }
 
         }
+
+        private void gestiónDeCafeteríaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click Gestión de Cafetería");
+        }
+
+        private void gestiónDeCampusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click Gestión de Campus");
+        }
+
     }
 }
