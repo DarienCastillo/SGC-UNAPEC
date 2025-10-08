@@ -1,4 +1,7 @@
-Database
+# Nota
+```El proyecto utiliza base de datos local, por lo tanto el servidor es el siguiente: (LocalDB)\MSSQLLocalDB```
+
+# Creación de la base de datos
 
 CREATE DATABASE SGC_UNAPEC;
 GO
