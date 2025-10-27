@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RolCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RolEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RolListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TableroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
